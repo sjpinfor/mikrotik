@@ -1,3 +1,8 @@
+/system script remove auto-upgrade-routerboard
+/system script remove auto-upgrade-packages
+/system scheduler remove auto-upgrade-routerboard
+/system scheduler remove auto-upgrade-packages
+
 /system script
 add dont-require-permissions=no name=script1 owner=admin policy=\
     ftp,reboot,read,write,policy,test,password,sniff,sensitive,romon source=":\
