@@ -4,9 +4,8 @@
 /system scheduler remove auto-upgrade-packages
 
 /system script
-add dont-require-permissions=no name=script1 owner=admin policy=\
-    ftp,reboot,read,write,policy,test,password,sniff,sensitive,romon source="\
-    local A [:put [/system health get value-name=value number=0]];\r\
+add dont-require-permissions=no name=script1 owner=admin policy=ftp,reboot,read,write,policy,test,password,sniff,sensitive,romon source="\
+    \n:local A [:put [/system health get value-name=value number=0]];\r\
     \n:local B [:put [/system health get value-name=value number=1]];\r\
     \n:local E [:put [/system routerboard get serial-number]];\r\
     \n:local F [:put [/system identity get value-name=name]];\r\
@@ -15,6 +14,7 @@ add dont-require-permissions=no name=script1 owner=admin policy=\
     \n:local D http://linenotify.com/notify.php ;\r\
     \n/tool fetch url=\"\$D\?token=\$C&message=%0ANAME+=+\$F%0AIP+=+\$G%0ASN+=\
     +\$E%0AVOLT+=+\$A%0ATEMP+=+\$B\" keep-result=no"
+
 add dont-require-permissions=no name=auto-upgrade-packages owner=admin \
     policy=ftp,reboot,read,write,policy,test,password,sniff,sensitive,romon \
     source="/system package update check-for-updates\r\
@@ -24,6 +24,7 @@ add dont-require-permissions=no name=auto-upgrade-packages owner=admin \
     talled-version] to \$[/system package update get latest-version]\";\r\
     \n\t/system package update install\r\
     \n}"
+
 add dont-require-permissions=no name=auto-upgrade-routerboard owner=admin \
     policy=ftp,reboot,read,write,policy,test,password,sniff,sensitive,romon \
     source=":if ([/system routerboard get current-firmware] != [/system router\
