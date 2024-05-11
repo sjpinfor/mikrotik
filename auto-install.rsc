@@ -38,4 +38,4 @@ add name=auto-upgrade-packages on-event=\
 add name=auto-upgrade-routerboard on-event=\
     "/system/script/run auto-upgrade-routerboard" policy=\
     ftp,reboot,read,write,policy,test,password,sniff,sensitive,romon \
-    start-date=2024-05-11 start-time=00:10:00
+    start-date=2024-05-11 start-time=00:20:00
