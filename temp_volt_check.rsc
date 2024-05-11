@@ -1,3 +1,5 @@
+/system script
+add dont-require-permissions=no name=temp_volt_check.rsc owner=admin policy=ftp,reboot,read,write,policy,test,password,sniff,sensitive,romon source=" 
 :local A [:put [/system health get value-name=value number=0]];
 :local B [:put [/system health get value-name=value number=1]];
 :local E [:put [/system routerboard get serial-number]];
