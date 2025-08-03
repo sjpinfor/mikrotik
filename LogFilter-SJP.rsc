@@ -1,6 +1,6 @@
 :local bot "7697723175:AAGN7cpIPXYwIX190XTm49qc3e7NeLStqmg"
 :local ChatID "-4898511256"
-:local myserver ("%F0%9F%94%B4"." "."MikroTik"." ".[/system identity get name]." ".[/system resource get board-name]." ".[/system resource get board-name]." %F0%9F%94%B4")
+:local myserver ("%F0%9F%94%B4"." ".[/system identity get name]." ".[/system resource get board-name]." %F0%9F%94%B4")
 :local scheduleName "LogFilter-SJP"
 :local startBuf [:toarray [/log find where message~"(invalid MAC address|login failure|loop|fcs|excessive|rebooted|ipsec|ike2|untrusted|flooding)" \ or topics~"(error|critical)"]]
 :local removeThese {"link";"telnet"}
