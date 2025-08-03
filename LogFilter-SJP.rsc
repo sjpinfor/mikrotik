@@ -9,7 +9,7 @@
 :local date [/system clock get date]
 :if ([:len [/system scheduler find name="$scheduleName"]] = 0) do={
 /log warning "[LogFilter] Alert : Schedule does not exist. Creating schedule ...."
-/system scheduler add name=$scheduleName interval=60s start-date=Jan/01/1970 start-time=startup on-event=$event
+/system scheduler add name=$scheduleName interval=30s start-date=Jan/01/1970 start-time=00:00:00 on-event=$event
 /log warning "[LogFilter] Alert : Schedule created!"
 }
 :local lastTime [/system scheduler get [find name="$scheduleName"] comment]
