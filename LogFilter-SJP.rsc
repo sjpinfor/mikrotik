@@ -2,7 +2,7 @@
 :local ChatID "-4898511256"
 :local myserver ("%F0%9F%94%B4"." ".[/system identity get name]." ".[/system resource get board-name]." %F0%9F%94%B4")
 :local scheduleName "LogFilter-SJP"
-:local startBuf [:toarray [/log find where message~"(invalid MAC address|login failure|loop|fcs|excessive|rebooted|ipsec|ike2|untrusted|flooding)" \ or topics~"(error|critical)"]]
+:local startBuf [:toarray [/log find where message~"(invalid MAC address|login failure|loop|fcs|excessive|rebooted|ipsec|ike2|untrusted|flooding|user Nobita logged in|user Nobita logged out|user SJP logged in|user SJP logged out)" \ or topics~"(error|critical)"]]
 :local removeThese {"link";"telnet"}
 :local event "/system/script/run $scheduleName"
 :global mesnum
